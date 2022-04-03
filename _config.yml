@@ -135,13 +135,37 @@ content:
     layout: list
     content:
       - layout: top-middle
-        title: Institution name
-        sub_title: Qualifications (eg. BA Performing Arts)
-        caption: Date Range (eg. 2016 - 2019)
+        title: AWS 자원 운영 관리
+        sub_title:
+        caption:
         quote: >
-          Short institution or course description (optional)
+          기본적인 모놀리틱 아키텍처를 구축 및 관리 경험
         description: | # this will include new lines to allow paragraphs
-          Description of qualification
+          - Elastic Beansatlk 운영 경험
+          - VPC 세팅
+          - 기타 AWS 자원 활용
+
+      - layout: top-middle
+        title: 효율적인 API 개발 및 리팩토링
+        sub_title:
+        caption:
+        quote: >
+          필요에 따른 성능 체크 및 성능 향상 리팩토링
+        description: | # this will include new lines to allow paragraphs
+          - slow query 를 수집할 수 있는 시스템 구축
+          - API에 따른 캐싱 및 성능 개선
+          - 큐를 활용한 비동기 처리
+          - 확장 가능한 소프트웨어 설계
+
+      - layout: top-middle
+        title: 팀원들과 동반성장할 수 있는 팀 능력
+        sub_title:
+        caption:
+        quote:
+        description: | # this will include new lines to allow paragraphs
+          - 팀원들과 함께 성장할 수 있는 스타디 문화 운영 및 관리
+          - 팀원들과 부족한 소통을 위한 문화 운영 및 관리
+          - 팀원들에게 좋은 에너지를 줄 수 있는 문화에 관심이 많음
 
   - title: Education
     layout: list
