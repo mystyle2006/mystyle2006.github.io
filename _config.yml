@@ -168,23 +168,40 @@ content:
           - 팀원들과 부족한 소통을 위한 문화 운영 및 관리
           - 팀원들에게 좋은 에너지를 줄 수 있는 문화에 관심이 많음
 
-#  - title: Education
-#    layout: list
-#    content:
-#      - layout: top-right
-#        title: Institution name
-#        sub_title: Qualifications (eg. BA Performing Arts)
-#        caption: Date Range (eg. 2016 - 2019)
-#        quote: >
-#          Short institution or course description (optional)
-#        description: | # this will include new lines to allow paragraphs
-#          Description of qualification
-#  - title: A Little More About Me
-#    layout: text
-#    content: | # this will include new lines to allow paragraphs
-#      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
-#
-#      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+  - title: Education
+    layout: list
+    content:
+      - layout: left
+        title: 노마드 코더
+        sub_title: 우버 이츠 클론 코딩
+        caption: 2022.04 ~
+        quote: >
+        description: | # this will include new lines to allow paragraphs
+          - 백앤드/프론트 팀원들과 Graphql, Nestjs, React 등 우리가 사용하는 기술 스펙에 대한 전반적인 이해도를 함께 향상시키고 서로 소통하는 내용을 공유하고자 모두 함께 강의를 구매하여 듣고 있습니다.
+
+      - layout: left
+        title: 인프런
+        sub_title: 자바스크립트로 알아보는 함수형 프로그래밍 (ES5) by 유인동
+        caption: 2022.03 ~
+        quote: >
+        description: | # this will include new lines to allow paragraphs
+          - 팀 매니저 개발자께서 추천해주신 함수형 프로그래밍 강의입니다.
+          - 함수형 프로그래밍에 대한 기본적인 이해를 도울 수 있던 강의입니다.
+
+      - layout: left
+        title: 패스트 캠퍼스
+        sub_title: The RED 백엔드 에센셜 - 대용량 서비스를 위한 아키텍처 with Redis by 강대명
+        caption: 2021.08 ~ 2021. 10
+        quote: >
+        description: | # this will include new lines to allow paragraphs
+          - 현재까지 대용량 서비스 트래픽을 경험해 본 적이 없어 이 부분을 강화하고자 이 강의를 구매하여 시청하였습니다.
+          - 대용량 서비스 구축을 위한 서비스 디스커버리, replication, sharding, load balancing, caching 등 다양한 개념들을 간접 경험할 수 있어 좋은 강의가 되었던 것 같습니다.
+
+  - title: 개발자로서 도움이 되었던 책들
+    layout: text
+    content: | # this will include new lines to allow paragraphs
+      - 리팩토링 2판
+      - 클린코드
 
 # Footer
 footer_show_references: true
