@@ -76,10 +76,10 @@ content:
         caption: 2018.04 ~ 2020.06 (2년 3개월)
         link: https://jober.io/
         quote: >
-          성장 가능한 개발자가 될 수 있는 좋은 영감을 주었던 회사
+          프론트, 백앤드 그리고 인프라까지 스타트업에서 해볼 수 있는 모든 경험을 겪음
         description: | # this will include new lines to allow paragraphs
-          - 좋은 서비스를 만들기 위해 개발, 마케팅, 운영 등 총괄적인 경험
-          - 프론트, 백앤드, 인프라 등 전반적인 어플리케이션 개발 경험
+          - Express, Sequelize, React, AWS 등 다양한 기술 스택을 학습 및 적용
+          - 마케팅 관점의 사고 방식으로 서비스를 개선 및 개발 경험
 
       - layout: left
         title: 두산인프라코어
