@@ -178,6 +178,7 @@ content:
         quote: >
         description: | # this will include new lines to allow paragraphs
           - 반응형 프로그래밍에 대한 이해도를 높이기 위한 강의
+
       - layout: left
         title: 노마드 코더
         sub_title: 우버 이츠 클론 코딩
