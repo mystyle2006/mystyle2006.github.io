@@ -172,9 +172,16 @@ content:
     layout: list
     content:
       - layout: left
+        title: 인프런
+        sub_title: 얄코의 반응형 프로그래밍 - 자바스크립트로 쉽게 배우는 ReactiveX
+        caption: 2022.05
+        quote: >
+        description: | # this will include new lines to allow paragraphs
+          - 반응형 프로그래밍에 대한 이해도를 높이기 위한 강의
+      - layout: left
         title: 노마드 코더
         sub_title: 우버 이츠 클론 코딩
-        caption: 2022.04 ~
+        caption: 2022.04
         quote: >
         description: | # this will include new lines to allow paragraphs
           - 백앤드/프론트 팀원들과 Graphql, Nestjs, React 등 우리가 사용하는 기술 스펙에 대한 전반적인 이해도를 함께 향상시키고 서로 소통하는 내용을 공유하고자 모두 함께 강의를 구매하여 듣고 있습니다.
