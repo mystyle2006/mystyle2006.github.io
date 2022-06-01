@@ -49,15 +49,21 @@ content:
     content:
       - layout: left
         title: 고미코퍼레이션
-        sub_title: 파트너센터 백앤드팀 리드
+        sub_title: 파트너센터 리드
         caption: 2021.05 ~ 현재
-        link: https://www.ssgdfs.com/
         quote: >
           현재 진행 중
         description: | # this will include new lines to allow paragraphs
-          - GraphQL, Nestjs 등 모던 프레임워크 설계 및 개발
-          - 확장 가능한 소프트웨어 아키텍처 설계 및 개발
-          - 업무(애자일, 온보딩 등), 개발(테스트 코드, 코드 리뷰 등) 프로세스 개선 
+          - 프론트팀과 타입 공유 및 문서 문제를 해결하기 위해 기존 rest 방식을 graphQL 방식으로 마이그레이션
+          - 테스트 코드를 작성하지 않아 발생했던 잦은 버그 이슈들을 테스트 코드의 필요성과 좋은 패턴(given-when-then) 등을 공유함으로써 개선
+          - git을 잘 활용하지 못하여 발생하는 협업 문제를 브랜치 전략 및 사용법에 대한 방식을 공유함으로써 해결
+          - 정산 시스템 업로드 장애를 (단기적)클러스터링 / (장기적)query 튜닝를 통해 장애 개선
+          - 신입 개발자가 팀에 잘 적응하지 못하는 문제를 작은 실무 문제들을 하나씩 해결하면서 적응할 수 있도록 온보딩 프로세스 개선
+          - 파트너센터 팀의 목표와 방향성에 대한 많은 의견 제시하고 실행
+          - JIRA & Confluence 시스템을 잘 활용하지 못하는 부분에 대해서 webstorm/pycharm + github + jira 자동 연동 가이드라인을 만들어 업무 효율 개선
+          - slow query 들을 수집하여 슬랙으로 알림을 받을 수 있도록 인프라 구축
+          - RDS / EB / redis 자원에 대한 장애를 슬랙으로 알림을 받을 수 있도록 인프라 구축
+          - 동일한 실수를 방지하기 위해 실수 공유 문화를 만들어 프로세스를 개선
 
       - layout: left
         title: 젠틀파이
