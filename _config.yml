@@ -7,7 +7,8 @@ version: 2
 
 # Personal info
 name: 이인호
-title: Nodejs 백앤드 개발자
+title: >
+  Nodejs 백앤드 개발자 (업데이트: 22.06.19)
 email: sayyou0918@gmail.com
 website: https://dukkeobi.tistory.com/
 
@@ -54,15 +55,47 @@ content:
         quote: >
           현재 진행 중
         description: | # this will include new lines to allow paragraphs
-          - 프론트팀과 타입 공유 및 문서 문제로 인한 업무 효율을 높이기 위해 기존 rest 방식을 graphQL 방식으로 마이그레이션
-          - 테스트 코드를 작성하지 않아 발생했던 잦은 버그 이슈들을 테스트 코드의 필요성과 좋은 패턴(given-when-then) 등을 공유함으로써 개선
-          - git을 잘 활용하지 못하여 발생하는 협업 문제를 브랜치 전략 및 사용법에 대한 방식을 공유함으로써 해결
-          - 정산 시스템 업로드 장애 발생으로 다른 요청을 처리하지 못하는 문제를 (단기적)클러스터링 / (장기적)query 튜닝를 통해 장애 개선
-          - 신입 개발자가 팀에 잘 적응하지 못하는 문제를 작은 실무 문제들을 하나씩 해결하면서 적응할 수 있도록 온보딩 프로세스 개선
-          - JIRA 시스템을 잘 활용하지 못하는 부분을 webstorm/pycharm + github + jira 자동 연동 가이드라인을 만들어 업무 효율 개선
-          - slow query 들을 수집하여 슬랙으로 알림을 받을 수 있도록 인프라 구축
-          - RDS / EB / redis 자원에 대한 장애를 슬랙으로 알림을 받을 수 있도록 인프라 구축
-          - 동일한 실수를 방지하기 위해 실수 공유 문화를 만들어 프로세스를 개선
+          - **정산 검수 시스템 개편**
+            - 문제: 베트남에서 처리한 정산 및 재고 정보가 정확하지 않는 문제가 발생 
+            - 원인: 베트남의 독특한 결제 방식(COD, 현장 결제 또는 반품)이 원인
+            - 해결
+              - OMS(Order Management System) 활용하여 실제 베트남에서 전달하는 주문들과 비교하여 검수하는 시스템 구축
+              - 약 2~3만건 정도되는 주문들을 업로드하는 처리 과정에서 다른 요청을 처리하지 못하는 문제를 query 튜닝를 통해 장애 개선 <br><br>
+          
+          - **지속적으로 확장 가능한 소프트웨어 구축**
+            - 문제: 구현 코드를 변경했을 때 모든 도메인에 영향이 가는 문제가 발생
+            - 원인: 추상에 의존하지 않고 구현에 의존되어 있는 다수의 코드들이 존재
+            - 해결
+              - 중요한 도메인부터 추상과 구현을 분리하고 추상에 의존하도록 리팩토링 진행
+              - controller/service/implementation 레이어의 역할과 책임을 고민하고 타 개발자의 블로그들을 보면서 참고하여 적용
+              - 캐시/권한 등 실제 비즈니스 로직과 분리될 수 있는 영역들을 별도의 데코레이터를 만들어 적용
+              - 관련 링크: https://dukkeobi.tistory.com/20 <br><br>
+
+          - **GraphQL 마이그레이션**
+            - 문제: 기존 rest 방식에서 프론트팀이 타입을 작성하는데 많은 시간(약 업무의 70~80%)을 소요
+            - 해결: GraphQL를 도입하여 스키마를 기반으로 백/프론트 타입을 공유하여 프론트 업무 효율을 향상 <br><br>
+          
+          - **테스트 코드의 필요성과 패턴 공유**
+            - 문제: 테스트 코드를 작성하지 않아 발생했던 사소한 실수가 반복
+            - 해결: given-when-then 패턴을 공유하고 실제 사례를 작성하여 팀에 공유하여 팀원 모두가 테스트 코드를 작성할 수 있는 인프라를 구축 <br><br>
+          
+          - **테스트 코드 실행 속도 개선**
+            - 문제: 테스트 코드 실행 속도가 오래 걸려 업무에 영향을 줌
+            - 원인: ts-jest의 타입 체킹 부분들에서 많은 시간을 소요하고 테스트가 진행됨
+            - 해결
+              - 타입 체킹하는 부분을 제외하여 테스트할 수 있도록 개선하여 속도를 약 10배 개선 (ts-jest -> @swc/jest 활용)
+              - 관련 링크: https://dukkeobi.tistory.com/23 <br><br>
+          
+          - **git-flow 적용**
+            - 문제: 소스 코드의 버전 관리가 되지 않는 문제가 발생
+            - 원인: git을 적극적으로 활용하지 않는 사내 문화
+            - 해결
+              - git을 적극적으로 활용하기 위해 팀 전체적인 git 이해도를 높일 수 있도록 교육 진행
+              - 배민에서 공유한 git-flow 블로그를 활용하여 방식을 공유 <br><br>
+          
+          - **AWS 알림 구축**
+            - 문제: 실무에 집중하다보면 AWS 자원를 모니터링이 하기 힘들어 문제가 발생한 후 대응하게 됨
+            - 해결: 모든 자원에 모니터링이 필요한 내용(메모리/CPU/Slow Query 등)을 분석하여 특정 임계점이되었을 때 slack으로 알림이 되도록 구축 <br><br>
 
       - layout: left
         title: 젠틀파이
@@ -70,10 +103,13 @@ content:
         caption: 2020.11 ~ 2021.04 (6개월)
         link: https://www.ssgdfs.com/
         quote: >
-          대규모 서비스 개발을 경험하게 해준 회사
+          요구사항을 모두 충족시켜 프로젝트를 성공적으로 완료
         description: | # this will include new lines to allow paragraphs
-          - AWS dialogflow 자연어 처리 서드파티 경험 
-          - EAI 시스템 경험
+          - **챗봇 서비스 백앤드 구축**
+            - 문제: 신세계의 면세점을 활용하는 많은 고객들의 공통적인 Q&A를 해결할 수 있는 챗봇 서비스 구축 
+            - 해결
+              - 자연어 처리를 위해 AWS Dialogflow 공식 문서를 참고하여 해결
+              - 자주 반복되는 질문들이 많은 서비스였기 때문에 캐싱을 적극적으로 활용할 수 있도록 기존 요구사항에 없던 부분에 의견을 내어 Redis를 통해 성능을 개선 <br><br>
 
       - layout: left
         title: 인사서비스 Jober
@@ -81,10 +117,44 @@ content:
         caption: 2018.04 ~ 2020.06 (2년 3개월)
         link: https://jober.io/
         quote: >
-          프론트, 백앤드 그리고 인프라까지 스타트업에서 해볼 수 있는 모든 경험을 겪음
+          pre-A 시리즈 투자를 받기까지 비즈니스 모델을 찾기 위한 다양한 MVP 구축 및 운영
         description: | # this will include new lines to allow paragraphs
-          - Express, Sequelize, React, AWS 등 다양한 기술 스택을 학습 및 적용
-          - 마케팅 관점의 사고 방식으로 서비스를 개선 및 개발 경험
+          - **주니어로 구성된 사내 개발팀의 기술 부채**
+            - 문제: 1년차로 구성된 3명의 개발자로 기술 부채가 많이 쌓이기 시작
+            - 해결: 
+              - 현실적으로 1년차 3명이 해결하기에 어려운 문제라고 판단되어 대표님에게 문의 후 다양한 기술 자문을 실시
+                - HB 스미스 CTO, 윤제상님 -> CI/CD를 효율적으로 관리하기 위해 관리형 자원을 함께 도입 ex) EB
+                - 레몬클라우드 CTO, 스티브님 -> 상황마다 필요한 기술 자문을 진행하고 레몬 클라우드의 일부 서비스를 사용
+                  - 링크: https://github.com/lemoncloud-io/lemon-core <br><br>
+          
+          - ****
+            - 문제: 여러 파일들을 동시에 업로드하는 기능
+            - 해결:
+              - SQS + SES + Lamda를 구축하여 이메일 시스템을 구축
+              - 저장소(어떤 저장소를 활용했는지 기억이 나지 않음)를 활용하여 이메일 전송 상태를 관리 <br><br>
+          
+          - **대량 이메일 전송 시스템 구축**
+            - 문제: 최대 2~3만 유저에게 동시에 이메일을 전송하는 시스템 구축이 필요
+            - 해결:
+              - SQS + SES + Lamda를 구축하여 이메일 시스템을 구축
+              - 저장소(어떤 저장소를 활용했는지 기억이 나지 않음)를 활용하여 이메일 전송 상태를 관리 <br><br>
+          
+          - **간편급여이체 with 하나은행**
+            - 문제: 하나은행의 정책으로 인한 암호화 스펙을 공유 불가로 jar 파일을 공유하여 node 기반으로 작성된 서버에서 구동이 되지 않는 문제
+            - 해결:
+              - AWS Lambda를 활용하여 jar 파일을 실행할 수 있는 서버를 구축하여 node 서버에서 http 통신을 통해 해결 <br><br>
+          
+          - **https SSL 인증 만료 이슈**
+            - 문제: 수동으로 관리되는 SSL 인증 만료로 인한 서비스 중단 이슈가 발생
+            - 해결:
+              - 단기적 방향: SSL 인증서를 재발급 받아 재발급 받은 내용으로 재설정 후 해결
+              - 장기적 방향: 도메인을 AWS Route53로 이전 후 SSL을 ACM으로 관리하도록 변경 <br><br>
+          
+          - **동적 Open Graph 구축 (feat. SCR)**
+            - 문제: 급여관리, 고용지원금, 채용 등 SPA로 구성된 각 랜딩페이지의 Open Graph를 별도로 구성이 필요
+            - 원인: SCR + CloudFront + S3로 구성되어 동적으로 Open Graph 삽입이 불가능 
+            - 해결:
+              - CloudFront의 lambda 트리거를 활용하여 사용자가 해당 html을 받기 전에 html 내용을 파싱하여 각 페이지에 맞게 Open Graph를 적용 <br><br>
 
       - layout: left
         title: 두산인프라코어
@@ -136,46 +206,48 @@ content:
           - jira, confluence, notion, monday.com, github
           - slack
 
-  - title: 역량
+  - title: 기타 역량
     layout: list
     content:
       - layout: top-middle
-        title: AWS 자원 운영 관리
-        sub_title:
+        title:
+        sub_title: 온보딩 프로세스 개선
         caption:
         quote: >
-          기본적인 모놀리틱 아키텍처를 구축 및 관리 경험
+          - 신입 개발자가 팀에 잘 적응하지 못하는 문제를 작은 실무 문제들을 하나씩 해결하면서 적응할 수 있도록 개선
         description: | # this will include new lines to allow paragraphs
-          - Elastic Beansatlk 운영 경험
-          - VPC 세팅
-          - 기타 AWS 자원 활용
 
       - layout: top-middle
-        title: 효율적인 API 개발 및 리팩토링
-        sub_title:
+        title:
+        sub_title: 팀원들과 목표에 집중하여 동반 성장할 수 있는 팀 빌딩 능력
         caption:
         quote: >
-          필요에 따른 성능 체크 및 성능 향상 리팩토링
-        description: | # this will include new lines to allow paragraphs
-          - slow query 를 수집할 수 있는 시스템 구축
-          - API에 따른 캐싱 및 성능 개선
-          - 큐를 활용한 비동기 처리
-          - 확장 가능한 소프트웨어 설계
+          - 업무 프로세스를 구축하여 목표에 집중할 수 있도록 운영 및 관리<br>
+          - 팀원들과 함께 성장할 수 있는 스타디 문화 운영 및 관리<br>
+          - 팀원들과 부족한 소통을 위한 문화 운영 및 관리<br>
+          - 팀원의 장점을 찾아주어 장점이 극대화되도록 지원
 
       - layout: top-middle
-        title: 팀원들과 동반성장할 수 있는 팀 능력
-        sub_title:
+        title:
+        sub_title: 팀의 효율을 올리기 위한 고민과 노력
         caption:
-        quote:
-        description: | # this will include new lines to allow paragraphs
-          - 효율적인 코드리뷰 문화 운영 및 관리
-          - 팀원들과 함께 성장할 수 있는 스타디 문화 운영 및 관리
-          - 팀원들과 부족한 소통을 위한 문화 운영 및 관리
-          - 팀원들에게 좋은 에너지를 줄 수 있는 문화에 관심이 많음
+        quote: >
+          - webstorm/pycharm + github + jira 자동 연동 가이드라인을 만들어 업무 효율 개선 <br>
+          - JIRA 시스템을 잘 활용하지 못하는 부분을 전사적으로 발표하여 팀에 기여 <br>
+          - 동일한 실수를 방지하기 위해 실수 공유 문화를 만들어 프로세스를 개선 
 
   - title: Education
     layout: list
     content:
+      - layout: left
+        title: 인프런
+        sub_title: 우아한형제들 최연소 기술이사 김영한의 스프링 완전 정복
+        caption: 2022.06
+        quote: > 
+          공부 중
+        description: | # this will include new lines to allow paragraphs
+          - OOP가 잘 녹아있는 프레임워크를 공부하여 나의 코드의 질을 한 층 더 올리기 위한 강의
+
       - layout: left
         title: 인프런
         sub_title: 얄코의 반응형 프로그래밍 - 자바스크립트로 쉽게 배우는 ReactiveX
@@ -215,6 +287,8 @@ content:
     content: | # this will include new lines to allow paragraphs
       - 리팩토링 2판
       - 클린코드
+      - 클린 아키텍처 (읽고 있는 중)
+      - 오라클 SQL 튜닝 (쿼리의 본질과 성능 튜닝에 대한 37가지 이슈) (읽고 있는 중)
 
 # Footer
 footer_show_references: true
