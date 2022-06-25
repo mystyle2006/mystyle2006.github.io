@@ -126,7 +126,7 @@ content:
           - 고용지원금/급여관리/직원 정보 관리 등 다양한 시스템 기획/개발/운영
           - 사수가 없는 상황에서 기술 부채를 해결하기 위해 기술 자문을 제시 및 적용
           - 간편급여이체 서비스 출시 with 하나은행
-          - https SSL 인증 만료 이슈
+          - https SSL 인증 만료 이슈 (Route53 + ACM)
           - 동적 Open Graph 구축 (feat. CSR)
 #            - CloudFront의 lambda 트리거를 활용하여 여러 랜딩페이지에 대한 html 파일에 각 페이지에 맞는 Open Graph를 주입하여 해결
 #            - HB 스미스 CTO, 윤제상님 -> CI/CD를 효율적으로 관리하기 위해 관리형 자원을 함께 도입 ex) EB
