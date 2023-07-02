@@ -54,6 +54,7 @@ content:
         quote: >
           typescript, nestjs, graphql, typeorm, rds, redis, elastic beanstalk, docker, liquibase, react, turbo, unstated-next, airflow
         description: | # this will include new lines to allow paragraphs
+          - Unit(정산, 정보 관리 시스템, 리포트) 별 개발 업무 효율화를 위해 EKS 인프라 변경을 제안 및 도입 
           - [정상적인 운영을 위해 필요한 batch task를 관리하기 위해 MWAA 도입](https://dukkeobi.tistory.com/34)
           - [배포 속도를 개선하기 위해 zero install 도입](https://dukkeobi.tistory.com/39)
           - [(프론트) 기존 멀티레포 -> 모노레포로 마이그레이션](https://dukkeobi.tistory.com/31)
