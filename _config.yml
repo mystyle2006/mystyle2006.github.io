@@ -221,13 +221,6 @@ content:
     content:
       - layout: top-middle
         title:
-        sub_title: 상황에 맞는 DevOps 개선
-        caption:
-        quote: >
-          - feature 서버 무중단 배포 구축 (https://dukkeobi.tistory.com/26)
-
-      - layout: top-middle
-        title:
         sub_title: 팀원들과 목표에 집중하여 동반 성장할 수 있는 팀 빌딩 능력
         caption:
         quote: >
@@ -297,7 +290,6 @@ content:
       - 리팩토링 2판
       - 클린코드
       - 클린 아키텍처
-      - 오라클 SQL 튜닝 (쿼리의 본질과 성능 튜닝에 대한 37가지 이슈) (읽고 있는 중)
 
 # Footer
 footer_show_references: true
