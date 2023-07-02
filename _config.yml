@@ -32,7 +32,7 @@ github_username: mystyle2006
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/me.jpeg
 about_content: | # this will include new lines to allow paragraphs
-  Nodejs & Typescript 4년차 백앤드 개발자로 API 개발 및 AWS 인프라 구축 등을 주로 담당했습니다.
+  Nodejs & Typescript 백앤드 개발자로 API 개발 및 AWS 인프라 구축 등을 주로 담당했습니다.
   
   제가 생각하는 가장 중요한 가치는 <b>동반 성장</b>입니다.
   동반 성장은 서로의 장점을 더 부각시키고 부족한 점은 서로가 채워주는 것입니다.
