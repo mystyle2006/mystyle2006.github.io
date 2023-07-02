@@ -52,8 +52,9 @@ content:
         sub_title: 파트너센터 리드
         caption: 2021.05 ~ 현재
         quote: >
-          typescript, nestjs, graphql, typeorm, rds, redis, elastic beanstalk, docker, liquibase, react, turbo, unstated-next
+          typescript, nestjs, graphql, typeorm, rds, redis, elastic beanstalk, docker, liquibase, react, turbo, unstated-next, airflow
         description: | # this will include new lines to allow paragraphs
+          - [정상적인 운영을 위해 필요한 batch task를 관리하기 위해 MWAA 도입](https://dukkeobi.tistory.com/34)
           - [배포 속도를 개선하기 위해 zero install 도입](https://dukkeobi.tistory.com/39)
           - [(프론트) 기존 멀티레포 -> 모노레포로 마이그레이션](https://dukkeobi.tistory.com/31)
           - 리포트 시스템 개편을 통해 데이터 로드 속도 향상
