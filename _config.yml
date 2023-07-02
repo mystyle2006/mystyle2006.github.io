@@ -8,7 +8,7 @@ version: 2
 # Personal info
 name: 이인호
 title: >
-  Nodejs 백앤드 개발자 (업데이트: 22.07.09)
+  Nodejs 백앤드 개발자 (업데이트: 23. 07.02)
 email: sayyou0918@gmail.com
 website: https://dukkeobi.tistory.com/
 
@@ -293,6 +293,15 @@ content:
       - 리팩토링 2판
       - 클린코드
       - 클린 아키텍처
+      - 이펙티브 타입스크립트
+      - Real Mysql 8.0
+
+  - title: 개발자로서 도움이 되었던 아티클
+    layout: text
+    content: | # this will include new lines to allow paragraphs
+      - [지속 가능한 소프트웨어를 만들어가는 방법](https://geminikim.medium.com/%EC%A7%80%EC%86%8D-%EC%84%B1%EC%9E%A5-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94-%EB%B0%A9%EB%B2%95-97844c5dab63)
+      - [테스트하기 좋은 코드] 시리즈 (https://jojoldu.tistory.com/674)
+      - [Typescript 타입 시스템 뜯어보기: 타입 호환성](https://toss.tech/article/typescript-type-compatibility)
 
 # Footer
 footer_show_references: true
